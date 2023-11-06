@@ -1,6 +1,6 @@
 body {
   background-color: deepskyblue;
-  max-width: 800px;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,9 @@ body {
   height: 100vh;
 }
 
+input {
+  width: fit-content;
+}
 section {
   background-color: white;
   width: 100%;
@@ -16,17 +19,19 @@ section {
   gap: 1rem;
 }
 
-input {
-  width: fit-content;
+#data {
+  /* Ensure that #data is the element that scrolls, not the ol directly */
+  height: 480px; /* Adjust as necessary */
+  overflow-y: auto;
 }
 
 #output {
-  height: 480px;
-  overflow-x: hidden;
+  /* Remove fixed height from #output to allow #data to control the scrolling */
+  overflow-y: visible;
 }
 
 ol {
-  list-style: inside auto;
+  /* list-style: inside auto; */
   padding-left: 0;
 }
 
